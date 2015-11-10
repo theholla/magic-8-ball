@@ -25,10 +25,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
         android:id="@+id/responseText"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Don&apos;t count on it."
         android:textColor="@android:color/white"
-        android:textSize="30sp"/>
+        android:textSize="30sp"
+        android:textAlignment="gravity"
+        android:gravity="center_vertical|center_horizontal"/>
 </RelativeLayout>
