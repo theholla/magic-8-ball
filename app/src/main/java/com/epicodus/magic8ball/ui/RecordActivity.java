@@ -29,6 +29,7 @@ public class RecordActivity extends AppCompatActivity implements AdapterView.OnI
     private ArrayAdapter<CharSequence> mAdapter;
     private String mSelectedResponse;
     private String mOutputFile;
+    private MediaRecorder recorder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +42,12 @@ public class RecordActivity extends AppCompatActivity implements AdapterView.OnI
         mResponseSpinner.setAdapter(mAdapter);
         mResponseSpinner.setOnItemSelectedListener(this);
 
-        final MediaRecorder recorder = new MediaRecorder();
-
         mRecordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mOutputFile = Environment.getExternalStorageDirectory().getAbsolutePath() + "/"+mSelectedResponse+".3gp";
 
+                recorder = new MediaRecorder();
                 recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
                 recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
                 recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
