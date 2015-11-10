@@ -14,23 +14,24 @@
         android:layout_height="wrap_content"
         android:text="8"
         android:id="@+id/btn8"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
         android:background="@drawable/btnround"
         android:width="250dp"
         android:height="250dp"
         android:textSize="200dp"
-        android:textAlignment="gravity"/>
+        android:textAlignment="gravity"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
         android:id="@+id/responseText"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textAlignment="gravity"
-        android:gravity="center_vertical|center_horizontal"/>
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"/>
 </RelativeLayout>
