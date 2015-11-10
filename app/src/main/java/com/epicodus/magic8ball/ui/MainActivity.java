@@ -1,13 +1,16 @@
 package com.epicodus.magic8ball.ui;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Context;
 import android.os.Bundle;
+import android.os.Vibrator;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.epicodus.magic8ball.R;
 import com.epicodus.magic8ball.models.Magic8Ball;
+import com.epicodus.magic8ball.models.ShakeListener;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -17,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.btn8) Button m8Button;
     @Bind(R.id.responseText) TextView mResponseText;
     private Magic8Ball m8Ball;
+    private ShakeListener mShaker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,5 +36,29 @@ public class MainActivity extends AppCompatActivity {
                 mResponseText.setText(m8Ball.getResponse());
             }
         });
+
+        final Vibrator vibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+
+        mShaker = new ShakeListener(this);
+        mShaker.setOnShakeListener(new ShakeListener.OnShakeListener () {
+            public void onShake()
+            {
+                vibe.vibrate(100);
+                mResponseText.setText(m8Ball.getResponse());
+            }
+        });
+    }
+
+    @Override
+    public void onResume()
+    {
+        mShaker.resume();
+        super.onResume();
+    }
+    @Override
+    public void onPause()
+    {
+        mShaker.pause();
+        super.onPause();
     }
 }
