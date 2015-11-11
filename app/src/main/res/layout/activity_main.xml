@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="8"
         android:id="@+id/btn8"
-        android:background="@drawable/btnround"
+        android:background="@drawable/btnround_white"
         android:width="250dp"
         android:height="250dp"
         android:textSize="200dp"

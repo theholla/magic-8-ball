@@ -1,15 +1,12 @@
 <resources>
     <string name="app_name">Magic 8 Ball</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
     <string name="title_activity_record">Record</string>
     <string name="selectResponse">Select a response to record:</string>
     <string name="record">Record</string>
     <string name="stop">Stop</string>
     <string name="listen">Listen</string>
-    <string name="record_again">re-record</string>
-    <string name="saveRecording">save</string>
+    <string name="saveRecording">Save</string>
 
     <string-array name="responses">
         <item>It is certain.</item>
