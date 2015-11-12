@@ -6,7 +6,7 @@
     <string name="record">Record</string>
     <string name="stop">Stop</string>
     <string name="listen">Listen</string>
-    <string name="saveRecording">Save</string>
+    <string name="home">8</string>
 
     <string-array name="responses">
         <item>It is certain.</item>

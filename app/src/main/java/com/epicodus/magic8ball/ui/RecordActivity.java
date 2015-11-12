@@ -1,5 +1,6 @@
 package com.epicodus.magic8ball.ui;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
@@ -23,7 +24,7 @@ public class RecordActivity extends AppCompatActivity implements AdapterView.OnI
 
     @Bind(R.id.spinner) Spinner mResponseSpinner;
     @Bind(R.id.recordButton) Button mRecordButton;
-    @Bind(R.id.btnSave) Button mSaveButton;
+    @Bind(R.id.btnHome) Button mHomeButton;
     @Bind(R.id.btnListen) Button mListenButton;
     @Bind(R.id.btnStop) Button mStopButton;
     private ArrayAdapter<CharSequence> mAdapter;
@@ -64,7 +65,7 @@ public class RecordActivity extends AppCompatActivity implements AdapterView.OnI
                 Log.d("HELP", mSelectedResponse);
                 mRecordButton.setVisibility(View.INVISIBLE);
                 mStopButton.setVisibility(View.VISIBLE);
-                mSaveButton.setVisibility(View.INVISIBLE);
+                mHomeButton.setVisibility(View.INVISIBLE);
                 mListenButton.setVisibility(View.INVISIBLE);
             }
         });
@@ -76,7 +77,7 @@ public class RecordActivity extends AppCompatActivity implements AdapterView.OnI
                 mStopButton.setVisibility(View.INVISIBLE);
                 mRecordButton.setVisibility(View.VISIBLE);
                 mListenButton.setVisibility(View.VISIBLE);
-                mSaveButton.setVisibility(View.VISIBLE);
+                mHomeButton.setVisibility(View.VISIBLE);
             }
         });
 
@@ -101,14 +102,17 @@ public class RecordActivity extends AppCompatActivity implements AdapterView.OnI
             }
         });
 
-        mSaveButton.setOnClickListener(new View.OnClickListener() {
+        mHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 recorder.reset();
                 recorder.release();
 
-                mSaveButton.setVisibility(View.INVISIBLE);
+                mHomeButton.setVisibility(View.INVISIBLE);
                 mListenButton.setVisibility(View.INVISIBLE);
+
+                Intent intent = new Intent(RecordActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -73,16 +73,16 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/saveRecording"
-        android:id="@+id/btnSave"
-        android:background="@drawable/btnround_blue"
+        android:text="@string/home"
+        android:id="@+id/btnHome"
+        android:background="@drawable/btnround_black"
         android:width="85dp"
         android:height="85dp"
         android:visibility="invisible"
-        android:backgroundTint="#4924fb"
         android:textColor="@android:color/white"
         android:layout_alignTop="@+id/recordButton"
         android:layout_toRightOf="@+id/recordButton"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginLeft="20dp"
+        android:textSize="40sp" />
 
 </RelativeLayout>
